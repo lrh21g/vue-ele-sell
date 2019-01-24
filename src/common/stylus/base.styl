@@ -3,6 +3,37 @@ body, html
   font-weight: 200
   font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif
 
+// 清楚浮动
+.clearfix
+  display: inline-block
+  &:after
+    display: block
+    content: "."
+    height: 0
+    line-height: 0
+    clear: both
+    visibility: hidden
+
+// >>> CSS像素: 一个抽像的单位，主要使用在浏览器上，用来精确度量Web页面上的内容。
+// >>>         一般情况之下，CSS像素称为与设备无关的像素(device-independent pixel)，简称DIPs。
+// >>> 屏幕密度: 是指一个设备表面上存在的像素数量，它通常以每英寸有多少像素来计算(PPI)
+// -------------------------------------------
+// 设备像素比(dpr) ＝ 物理像素 / 设备独立像素
+// >>> 物理像素: 又被称为设备像素，是显示设备中一个最微小的物理部件。厂家设置为多少就是多少.
+// >>> 设备独立像素: 也称为密度无关像素，可以认为是计算机坐标系统中的一个点，
+//                  这个点代表一个可以由程序使用的虚拟像素(比如说CSS像素)，然后由相关系统转换为物理像素。
+// >>>              dip或dp,（device independent pixels，设备独立像素）与屏幕密度有关。
+// >>> 示例：
+// >>> iPhone6 的设备宽度和高度为 375pt * 667pt, 可以理解为设备独立像素(dip)
+// >>> iPhone6 的设备像素比(dpr)为 2
+// >>> iPhone6 的物理像素 = 设备像素比(dpr) * 设备独立像素(dip) = 750pt * 1334pt
+// -------------------------------------------
+// >>> 在不同的屏幕上，CSS像素所呈现的物理尺寸是一致的，而不同的是CSS像素所对应的物理像素具数是不一致的。
+// >>> 在普通屏幕下,1个CSS像素 对应 1个物理像素，
+// >>> 在Retina屏幕下，1个CSS像素对应的却是4个物理像素。反过来说，一个CSS像素点实际分成了四个，这样就造成了颜色只能近似选取，于是，我们看上去就变得模糊了。
+// -------------------------------------------
+// 在CSS中，可以通过-webkit-device-pixel-ratio，-webkit-min-device-pixel-ratio和 -webkit-max-device-pixel-ratio进行媒体查询，
+// 对不同dpr的设备，做一些样式适配(这里只针对webkit内核的浏览器和webview)
 @media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)
   .border-1px
     &::after
