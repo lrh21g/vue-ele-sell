@@ -10,6 +10,10 @@ border-1px($color)
     border-top 1px solid $color
     content ' '
 
+border-none()
+  &:after
+    display none
+
 // 兼容Retina屏幕
 bg-image($url)
   background-image url($url + "@2x.png")
