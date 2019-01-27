@@ -87,7 +87,7 @@
     },
     data () {
       return {
-        showFlag: true,
+        showFlag: false,
         selectType: ALL, // 选择的评价类型
         onlyContent: true, // 是否只看有内容的评价
         desc: { // 评价类型描述

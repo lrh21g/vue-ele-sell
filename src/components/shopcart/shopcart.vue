@@ -208,7 +208,7 @@
       // 2. goods组件 通过 $ref 获取 shop-cart组件 ref（shopCart），获取shop-cart组件的 drop() 方法触发
       drop (el) {
         // el 为 cart-control 中增加商品数量按钮DOM
-        console.log('el', el)
+        // console.log('el', el)
         for (let i = 0; i < this.balls.length; i++) {
           let ball = this.balls[i]
           if (!ball.show) {
