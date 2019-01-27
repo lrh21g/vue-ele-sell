@@ -215,7 +215,7 @@
           flex 0 0 28px
           width 28px
           margin-right 12px
-          img 
+          img
             border-radius 50%
         .content
           position relative
