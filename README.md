@@ -19,6 +19,7 @@
 + [项目各组件简介](./readme/项目组件简介.md)
 + [商品列表与商品分类列表联动](./readme/商品列表与商品分类列表联动.md)
 + [小球动画](./readme/小球动画.md)
++ Sticky Footer：它指的就是一种网页效果： 如果页面内容不足够长时，页脚固定在浏览器窗口的底部；如果内容足够长时，页脚固定在页面的最底部。但如果网页内容不够长，置底的页脚就会保持在浏览器窗口底部。实现方法参考文章：[各种CSS实现Sticky Footer](https://mp.weixin.qq.com/s?__biz=MzU0OTE3MjE1Mw%3D%3D&mid=2247483693&idx=1&sn=ea846c8a1b404a8a0aa5a5175059e0f4&chksm=fbb2a7fbccc52eed1b62f21503d93449c8425c464d5b4ac576facadf560f95ab9ea8aca5484b&mpshare=1&scene=23&srcid=1120MlKsKxWYxEsbttZ5V0CO)
 
 ## 4. 项目展示
 
