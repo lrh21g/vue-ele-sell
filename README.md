@@ -14,6 +14,10 @@
 + 打包：`npm run build`
 + ESlint检查：`npm run lint`
 
-## 3. 项目展示
+## 3. 项目备注
+
++ [项目各组件简介](./readme/项目组件简介.md)
+
+## 4. 项目展示
 
 ![elesell](./readme/images/elesell01.png) ![elesell](./readme/images/elesell02.png) ![elesell](./readme/images/elesell03.png) ![elesell](./readme/images/elesell04.png) ![elesell](./readme/images/elesell05.png) ![elesell](./readme/images/elesell06.png)

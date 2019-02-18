@@ -24,7 +24,7 @@
       starType () {
         return 'star-' + this.size
       },
-      // 评分 转换为 star数组，示例：3.3分 --> ['on', 'on', 'on', 'half', 'off', 'off']
+      // 评分 转换为 star数组，示例：3.3分 --> ['CLS_ON', 'CLS_ON', 'CLS_ON', 'CLS_HALF', 'CLS_OFF', 'CLS_OFF']
       itemClasses() {
         let result = []
         let score = Math.floor(this.score * 2) / 2
