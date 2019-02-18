@@ -220,6 +220,7 @@
         }
       },
       beforeDrop (el) {
+        console.log('beforeDrop')
         const ball = this.dropBalls[this.dropBalls.length - 1] // 获取存放落入小球的数组的最后一个，最后一个是最新的一个
         const rect = ball.el.getBoundingClientRect() // 获取 cart-control 对应的增加商品数量按钮DOM的位置信息
         // getBoundingClientRect()方法返回元素的大小及其相对于视口的位置
@@ -227,21 +228,28 @@
         const y = -(window.innerHeight - rect.top - 22)
         // rect.top 为DOM距离视口顶部边框框的位置
         // y 需要取负值的原因是，底部购物栏 购物logo 相对于小球DOM ，处于小球的下方，y应该为负值
-        el.style.display = '' // 小球默认隐藏，此处将小球进行显示
+        el.style.display = 'block' // 清空display
+        console.log('beforeDrop el.style.transform', el.style.transform)
         el.style.transform = el.style.webkitTransform = `translate3d(0, ${y}px, 0)`
         // transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜
         // webkitTransform 为为了进行兼容
+        // translate3d 移动
+        // 处理内层动画
         const inner = el.getElementsByClassName(innerClsHook)[0]
         inner.style.transform = inner.style.webkitTransform = `translate3d(${x}px, 0, 0)`
       },
       dropping (el, done) {
-        this._reflow = document.body.offsetHeight
+        console.log('dropping')
+        console.log('dropping el', el)
+        // 浏览器对于重绘是有要求并且是有队列完成的,这是主要为了性能,虽然动画隐藏了小球display none,但没有触发html重绘,或者说没有立即触发html重绘,所以需要手动
+        this._reflow = document.body.offsetHeight // 手动触发html重绘的方法
         el.style.transform = el.style.webkitTransform = `translate3d(0, 0, 0)`
         const inner = el.getElementsByClassName(innerClsHook)[0]
         inner.style.transform = inner.style.webkitTransform = `translate3d(0, 0, 0)`
         el.addEventListener('transitionend', done) // 监听 transitionend 事件，表示该动画已经结束，之后触发 afterDrop 方法
       },
       afterDrop (el) {
+        console.log('afterDrop')
         const ball = this.dropBalls.shift() // shift() 方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。
         if (ball) {
           ball.show = false
