@@ -156,8 +156,9 @@
           click: true,
           probeType: 3
         })
+        // 监听商品列表滚动，并记录Y轴的滚动距离
         this.foodsScroll.on('scroll', (pos) => {
-          // 判断滑动方向，避免下拉时分类高亮错误（如:第一个分类商品数量为1时，下拉使得第二分类高亮）
+          // pos.y <= 0， 用于判断滑动方向，避免下拉时分类高亮错误（如:第一个分类商品数量为1时，下拉使得第二分类高亮）
           if (pos.y <= 0) {
             this.scrollY = Math.abs(Math.round(pos.y))
             // pos.y 为负值，需要通过 Math.abs() 取正数
@@ -167,12 +168,12 @@
         })
       },
       _calculateHeight () {
-        let foodList = this.$refs.foodList // 获取食品分类列表的dom数组
-        let height = 0 // 第一个分类节点下的高度为 0
+        let foodList = this.$refs.foodList // 获取商品列表下，商品分类标题的DOM数组
+        let height = 0 // 商品列表下，第一个分类标题距离容器内顶部的距离为 0
         this.listHeight.push(height)
         for (let i = 0; i < foodList.length; i++) {
           let item = foodList[i]
-          height += item.clientHeight
+          height += item.clientHeight // clientHeight 元素内部高度，包含内边距，但不包括水平滚动条、边框和外边距
           this.listHeight.push(height)
         }
       },
