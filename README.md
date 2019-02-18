@@ -1,29 +1,5 @@
 # vue-sell
 
-## Project setup
-```
-npm install
-```
+## 项目展示
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+![elesell](./readme/images/elesell01.png) ![elesell](./readme/images/elesell02.png) ![elesell](./readme/images/elesell03.png) ![elesell](./readme/images/elesell04.png) ![elesell](./readme/images/elesell05.png) ![elesell](./readme/images/elesell06.png)
